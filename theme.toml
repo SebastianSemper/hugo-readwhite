@@ -1,16 +1,16 @@
 name = "Hugo Read White"
 license = "MIT"
 licenselink = "https://github.com/janraasch/hugo-bearblog/blob/master/LICENSE"
-description = "A Hugo theme based on »Bear Blog« by Jan Raasch". Better font, math, highlighting, no dark"
+description = "A Hugo theme based on »Bear Blog« by Jan Raasch. Better font, math, highlighting, no dark"
 homepage = "https://github.com/sebastiansemper/hugo-readwhite"
 demosite = "https://sebastiansemper.de/"
 tags = ["blog", "responsive", "minimal", "clean", "simple", "light", "minimalist", "mobile", "fast", "white", "minimalistic", "reading"]
 features = ["favicon", "seo", "no stylesheets", "rss"]
-min_version = "0.124.1"
+min_version = "0.112.1"
 
 [author]
   name = "Sebastian Semper"
-  homepage = "https://www.sebastiansemper.der"
+  homepage = "https://www.sebastiansemper.de"
 
 [original]
   name = "Hugo Bear Blog"

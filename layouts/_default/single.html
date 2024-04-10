@@ -17,6 +17,7 @@
   {{ .Content }}
 </content>
 <p> 
+  Schlagwörter: 
   {{ range (.GetTerms "tags") }}
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
   {{ end }}

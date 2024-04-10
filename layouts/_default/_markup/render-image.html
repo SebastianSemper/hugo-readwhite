@@ -1,0 +1,23 @@
+{{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+{{ if $image }}
+{{ $small := $image.Resize "650x" }}
+{{ $medium := $image.Resize "975x" }}
+{{ $big := $image.Resize "1350x" }}
+{{ $alt := .PlainText | safeHTML }}
+{{ $caption := "" }}
+{{ with .Title }}
+  {{ $caption = . | safeHTML }}
+{{ end }}
+
+<figure>
+    <img
+      sizes="(min-width: 400px) 10em, 90vw"
+      srcset="{{ $small.RelPermalink }} 650x, {{ $medium.RelPermalink }} 975x, {{ $big.RelPermalink }} 1350x"
+      width="{{ $image.Width }}"
+      alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+      >
+    {{ with $caption }}
+    <figcaption>{{ . | markdownify }}</figcaption>
+    {{ end }}
+</figure>
+{{ end }}

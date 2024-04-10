@@ -1,0 +1,24 @@
+{{ define "main" }}
+<h3>{{ .Title }}</h3>
+
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<p>
+  <i>
+    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+      {{ .Date | time.Format ":date_long" }}
+    </time>
+  </i>
+</p>
+<aside>
+  {{ .TableOfContents }}
+</aside>
+{{ end }}{{ end }}
+<content>
+  {{ .Content }}
+</content>
+<p> 
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ end }}

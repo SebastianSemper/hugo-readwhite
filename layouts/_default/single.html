@@ -16,10 +16,12 @@
 <content>
   {{ .Content }}
 </content>
+{{ if eq .Type "blog" }}
 <p> 
   Schlagwörter: 
   {{ range (.GetTerms "tags") }}
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
   {{ end }}
 </p>
+{{ end }}
 {{ end }}

@@ -18,7 +18,7 @@
 </content>
 {{ if eq .Type "blog" }}
 <p> 
-  Schlagwörter: 
+  Tags: 
   {{ range (.GetTerms "tags") }}
   <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
   {{ end }}

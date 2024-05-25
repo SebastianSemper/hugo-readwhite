@@ -1,4 +1,7 @@
 {{ define "main" }}
+<aside>
+  {{ .TableOfContents }}
+</aside>
 <h3>{{ .Title }}</h3>
 
 {{ if eq .Type "blog" }}{{ if not .Params.menu }}
@@ -9,9 +12,6 @@
     </time>
   </i>
 </p>
-<aside>
-  {{ .TableOfContents }}
-</aside>
 {{ end }}{{ end }}
 <content>
   {{ .Content }}

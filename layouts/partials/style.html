@@ -33,6 +33,7 @@
   a:visited {color: var(--orange-pantone)}
   a:hover {color: var(--orange-pantone)}
   a:active {color: var(--orange-pantone)}
+
   .title {
     text-decoration: none;
     border: 0;
@@ -49,13 +50,22 @@
   
   nav {
     padding-bottom: 10px;
-    border-bottom: black 1px solid;
+    border-bottom: var(--paynes-gray) 1px solid;
     word-wrap: normal;
     overflow-wrap: normal;
     -webkit-hyphens: none !important;
     -ms-hyphens: none !important;
     hyphens: none !important;
   }
+
+  #TableOfContents{ 
+    float: right;
+    padding: 0x;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-bottom: none;
+  }
+
 
   textarea {
     width: 100%;
@@ -83,9 +93,9 @@
   }
 
   code {
-    padding: 2px 5px;
+    padding: 0px 0px;
     color: var(--paynes-gray);
-    font-size: 16px;
+    font-size: 14px;
   }
 
   pre code {
@@ -111,16 +121,18 @@
     font-style: italic;
   }
 
-  code.has-jax {font: inherit;
-              font-size: 100%;
-              background: inherit;
-              border: inherit;
-              color: black}
+  code.has-jax {
+    font: inherit;
+    font-size: 100%;
+    background: inherit;
+    border: inherit;
+    color: black;
+  }
 
   footer {
     padding: 25px;
     text-align: center;
-    border-top: black 1px solid;
+    border-top: var(--paynes-gray) 1px solid;
   }
 
   .helptext {
@@ -153,13 +165,6 @@
     flex: 0 0 200px;
   }
 
-  #TableOfContents{
-    border-bottom: none;
-    padding-bottom: 0px; 
-  }
-
-  .footnotes::fist-line {
-    content: "<h1>Joe's Task:</h1>";
-  }
+  
 
 </style>

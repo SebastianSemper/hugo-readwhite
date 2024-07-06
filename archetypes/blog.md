@@ -2,10 +2,7 @@
 title = "{{ replace .Name "-" " " | title }}"
 date = "{{time.Format .Site.Params.dateformat .Date }}"
 
-#
-# description is optional
-#
-# description = "An optional description for SEO. If not provided, an automatically created summary will be used."
+menu = "main"
 
 tags = [{{ range $plural, $terms := .Site.Taxonomies }}{{ range $term, $val := $terms }}"{{ printf "%s" $term }}",{{ end }}{{ end }}]
 +++

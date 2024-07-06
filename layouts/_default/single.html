@@ -1,7 +1,9 @@
 {{ define "main" }}
+{{ if not (.Params.hidetoc) }}
 <aside>
   {{ .TableOfContents }}
 </aside>
+{{ end }}
 <h3>{{ .Title }}</h3>
 
 {{ if eq .Type "blog" }}{{ if not .Params.menu }}

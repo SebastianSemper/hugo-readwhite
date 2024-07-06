@@ -1,18 +1,18 @@
 {{ define "main" }}
-<content>
-  {{ range .Pages }}
-    <div class="listmeme">
-    <h4>
-      <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-      {{ .Date | time.Format ":date_long" }}
-    </time>
-    </h4>
-    <h2>{{ .Title }}</h2>
-    {{ .Content }}
-    </div>
-  {{ else }}
-    Keine Memes bis jetzt.
-  </li>
-  {{ end }}
-</content>
+
+{{ range .Pages }}
+  <div class="listmeme">
+  <h4>
+    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+    {{ .Date | time.Format ":date_long" }}
+  </time>
+  </h4>
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  </div>
+{{ else }}
+  Keine Memes bis jetzt.
+</li>
+{{ end }}
+
 {{ end }}

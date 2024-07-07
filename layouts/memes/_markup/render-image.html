@@ -1,0 +1,16 @@
+{{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
+{{ if $image }}
+{{ $small := $image.Resize "325x webp q99 Lanczos" }}
+{{ $normal := $image.Resize "650x webp q99 Lanczos" }}
+{{ $alt := .PlainText | safeHTML }}
+{{ $caption := "" }}
+{{ with .Title }}
+  {{ $caption = . | safeHTML }}
+{{ end }}
+<img
+  sizes="(max-width: 600px) 480px,800px"
+  srcset="{{ $small.RelPermalink }} 325w, {{ $normal.RelPermalink }} 650w"
+  width="{{ $image.Width }}"
+  alt="{{ if $alt }}{{ $alt }}{{ else if $caption }}{{ $caption | markdownify | plainify }}{{ else }}&nbsp;{{ end }}"
+>
+{{ end }}

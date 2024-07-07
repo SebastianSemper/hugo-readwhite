@@ -38,15 +38,17 @@
     text-decoration: none;
     border: 0;
   }
+
   .listmeme {
     width: 100%;
-    text-align: center; 
     margin: 0px;
     padding: 0px;
-    border-bottom: 1px solid var(--battleship-gray);}
-  .listmeme figure {
-    padding: 0px; margin: 0px;
   }
+  
+  .listmeme:not(:last-of-type){
+    border-bottom: 1px solid var(--battleship-gray);
+  }
+  
   .listmeme img {
     margin-left: auto;
     margin-right: auto;
@@ -181,6 +183,7 @@
     flex: 0 0 200px;
   }
 
-  
-
+  ul.pagination {text-align: center;}
+  ul.pagination li.page-item {display: inline; margin: 0px 5px}
+  ul.pagination li.page-item.active a {color: var(--sandy-brown)}
 </style>

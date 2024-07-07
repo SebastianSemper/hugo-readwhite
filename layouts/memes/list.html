@@ -1,6 +1,9 @@
 {{ define "main" }}
 
-{{ range .Pages }}
+{{ $pages := where site.RegularPages "Type" "memes" }}
+{{ $paginator := .Paginate $pages.ByTitle 7 }}
+
+{{ range $paginator.Pages }}
   <div class="listmeme">
   <h4>
     <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
@@ -14,5 +17,7 @@
   Keine Memes bis jetzt.
 </li>
 {{ end }}
+
+{{ template "_internal/pagination.html" . }}
 
 {{ end }}

@@ -1,8 +1,8 @@
 {{ $image := .Page.Resources.GetMatch (printf "%s" (.Destination | safeURL)) }}
 {{ if $image }}
-{{ $small := $image.Resize "650x" }}
-{{ $medium := $image.Resize "975x" }}
-{{ $big := $image.Resize "1350x" }}
+{{ $small := $image.Resize "650x webp q99 Lanczos" }}
+{{ $medium := $image.Resize "975x webp q99 Lanczos" }}
+{{ $big := $image.Resize "1350x  webp q95 Lanczos" }}
 {{ $alt := .PlainText | safeHTML }}
 {{ $caption := "" }}
 {{ with .Title }}

@@ -1,1 +1,17 @@
-
+{{ define "main" }}
+  <div class="listmeme">
+  <h4>
+    <div>
+      <time style="float: left" datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+        {{ .Date | time.Format ":date_long" }}
+      </time>
+      {{ with .Parent }}
+        <a style="float: right; font-weight: normal;" href="{{ .RelPermalink }}">Back</a>
+      {{ end }}
+    </div>
+  </h4>
+  <div style="clear: both;"></div>
+  <h2>{{ .Title }}</h2>
+  {{ .Content }}
+  </div>
+{{ end }}

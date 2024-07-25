@@ -1,0 +1,16 @@
+{{ define "main" }}
+
+{{ range .Sections.Reverse }}
+  <h2>{{ .Title }}</h2>
+  <ul>
+    {{ range .RegularPagesRecursive.Reverse }}
+    <li class="pub"><span style="color: var(--paynes-gray)">[{{ .Params.type }}]</span> <b>{{ .Title }}</b>; <i>{{ .Params.authors }}</i> <a href="{{ .Params.link }}">[Link]</a></li>
+    {{ end }}
+  </ul>
+{{ else }}
+  Keine Publikationen bis jetzt.
+{{ end }}
+
+{{ end }}
+
+

@@ -1,0 +1,29 @@
+{{ define "main" }}
+{{ if not (.Params.hidetoc) }}
+<aside>
+  {{ .TableOfContents }}
+</aside>
+{{ end }}
+<h3>{{ .Title }}</h3>
+
+{{ if eq .Type "blog" }}{{ if not .Params.menu }}
+<p>
+  <i>
+    <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+      {{ .Date | time.Format ":date_long" }}
+    </time>
+  </i>
+</p>
+{{ end }}{{ end }}
+<content>
+  {{ .Content }}
+</content>
+{{ if eq .Type "blog" }}
+<p> 
+  Tags: 
+  {{ range (.GetTerms "tags") }}
+  <a href="{{ .Permalink }}">#{{ .LinkTitle }}</a>
+  {{ end }}
+</p>
+{{ end }}
+{{ end }}

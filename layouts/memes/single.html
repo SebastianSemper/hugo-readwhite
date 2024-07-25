@@ -6,7 +6,9 @@
         {{ .Date | time.Format ":date_long" }}
       </time>
       {{ with .Parent }}
-        <a style="float: right; font-weight: normal;" href="{{ .RelPermalink }}">Back</a>
+        <a style="float: right; font-weight: normal;" href="{{ .RelPermalink }}">
+            Back
+        </a>
       {{ end }}
     </div>
   </h4>

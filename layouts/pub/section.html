@@ -1,16 +1,19 @@
 {{ define "main" }}
-
 {{ range .Sections.Reverse }}
   <h2>{{ .Title }}</h2>
   <ul>
     {{ range .RegularPagesRecursive.Reverse }}
     <li class="pub">
       <span class="type">{{ .Params.type }} — </span>
-      <span class="title">{{ .Title }};</span>
+      <span class="title">"{{ .Title }}"</span>
       <span class="authors">{{ .Params.authors }};</span>
+      <span class="source">{{ .Params.source }};</span>
       <br>
-      <span class="citations">{{ .Params.citations }} cite(s) on crossref;</span>
-      <a href="{{ .Params.link }}">{{ .Params.link }}</a></li>
+      <span class="citations">{{ .Params.citations }} Zitation{{if ne .Params.citations 1}}en{{ end }} bei Crossref;</span>
+      <a href="{{ .Params.link }}">{{ .Params.link }}</a>
+      <br>
+      <a href="{{ .Permalink }}">[Details]</a>
+    </li>
     {{ end }}
   </ul>
 {{ else }}

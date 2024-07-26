@@ -4,7 +4,13 @@
   <h2>{{ .Title }}</h2>
   <ul>
     {{ range .RegularPagesRecursive.Reverse }}
-    <li class="pub"><span style="color: var(--paynes-gray)">[{{ .Params.type }}]</span> <b>{{ .Title }}</b>; <i>{{ .Params.authors }}</i> <a href="{{ .Params.link }}">[Link]</a></li>
+    <li class="pub">
+      <span class="type">{{ .Params.type }} — </span>
+      <span class="title">{{ .Title }};</span>
+      <span class="authors">{{ .Params.authors }};</span>
+      <br>
+      <span class="citations">{{ .Params.citations }} cite(s) on crossref;</span>
+      <a href="{{ .Params.link }}">{{ .Params.link }}</a></li>
     {{ end }}
   </ul>
 {{ else }}

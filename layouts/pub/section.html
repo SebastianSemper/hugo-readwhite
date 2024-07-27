@@ -1,4 +1,7 @@
 {{ define "main" }}
+
+{{ .Content }}
+
 {{ range .Sections.Reverse }}
   <h2>{{ .Title }}</h2>
   <ul>
@@ -11,8 +14,11 @@
       <br>
       <span class="citations">{{ .Params.citations }} Zitation{{if ne .Params.citations 1}}en{{ end }} bei Crossref;</span>
       <a href="{{ .Params.link }}">{{ .Params.link }}</a>
-      <br>
-      <a href="{{ .Permalink }}">[Details]</a>
+      
+      <p style="padding: 0px; margin-top: 5px; margin-left: 5px"><a href="{{ .Permalink }}"> 
+        Details &rarr;
+      </a></p>
+      
     </li>
     {{ end }}
   </ul>

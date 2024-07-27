@@ -4,15 +4,19 @@
 
 <p style="font-style: italic;">{{ .Params.authors }}</p>
 <p>{{ .Params.source }}</p>
+<a href="{{ .Params.link }}">{{ .Params.link }}</a>
+
+<h4>Abstract</h4>
 
 <content>
   {{ .Content }}
 </content>
 
-<a 
+<p><a 
   style="font-weight: normal;" 
   href="{{ with .Site.GetPage "/pub" }}{{ .Permalink }}{{ end }}"
 >
     &larr; Zurück
 </a>
+</p>
 {{ end }}

@@ -10,12 +10,12 @@
       <span class="type">{{ .Params.type }} — </span>
       <span class="title">"{{ .Title }}"</span>
       <span class="authors">{{ .Params.authors }};</span>
-      <span class="source">{{ .Params.source }};</span>
+      {{if (isset .Params "source")}}<span class="source">{{ .Params.source }};</span>{{ end }}
       <br>
       <span class="citations">{{ .Params.citations }} Zitation{{if ne .Params.citations 1}}en{{ end }} bei Crossref;</span>
       <a href="{{ .Params.link }}">{{ .Params.link }}</a>
       
-      <p style="padding: 0px; margin-top: 5px; margin-left: 5px"><a href="{{ .Permalink }}"> 
+      <p style="text-align: right; padding: 0px; margin-top: 5px; margin-right: 5px"><a href="{{ .Permalink }}"> 
         Details &rarr;
       </a></p>
       

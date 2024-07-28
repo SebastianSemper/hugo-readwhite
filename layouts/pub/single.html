@@ -3,7 +3,7 @@
 <h3>{{ .Title }}</h3>
 
 <p style="font-style: italic;">{{ .Params.authors }}</p>
-<p>{{ .Params.source }}</p>
+<p>{{if (isset .Params "source")}}{{ .Params.source }},{{ end }} {{ .Params.year }}</p>
 <a href="{{ .Params.link }}">{{ .Params.link }}</a>
 
 <h4>Abstract</h4>

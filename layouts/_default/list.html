@@ -11,14 +11,13 @@
   <ul class="blog-posts">
     {{ range .Pages }}
     <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-            {{ .Date | time.Format ":date_long" }}
-          </time>
-        </i>
-      </span>
       <a href="{{ .Permalink }}">{{ .Title }}</a>
+      <span class="date">
+        vom
+        <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+            {{ .Date | time.Format ":date_long" }}
+        </time>
+      </span>
     </li>
     {{ else }}
     <li>

@@ -32,12 +32,13 @@
     overflow-wrap: anywhere; hyphens: none; -webkit-hyphens: none; -ms-hyphens: none;}
   a:link {color: var(--orange-pantone)}
   a:visited {color: var(--orange-pantone)}
-  a:hover {color: var(--orange-pantone)}
+  a:hover {color: var(--orange-pantone); text-decoration-color: var(--charcoal); text-decoration: underline;}
   a:active {color: var(--orange-pantone)}
 
   .title {
     text-decoration: none;
     border: 0;
+    text-align: right;
   }
 
   .listmeme {
@@ -149,9 +150,11 @@
   }
 
   footer {
-    padding: 25px;
+    padding: 15px;
+    margin-top: 20px;
     text-align: center;
     border-top: var(--paynes-gray) 1px solid;
+    color: var(--battleship-gray)
   }
 
   .pub::after{clear: both;}
@@ -182,9 +185,7 @@
     padding: unset;
   }
 
-  ul.blog-posts li {
-    display: flex;
-  }
+  .blog-posts .date {color: var(--paynes-gray); font-style: italic;}
 
   .floatImage {
     float: right;
@@ -193,10 +194,6 @@
     padding: 0px;
     max-width: 30%;
     width: 200px;
-  }
-
-  ul.blog-posts li span {
-    flex: 0 0 200px;
   }
 
   ul.pagination {text-align: center;}

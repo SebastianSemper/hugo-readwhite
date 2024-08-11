@@ -3,6 +3,8 @@
 {{ $pages := where site.RegularPages "Type" "memes" }}
 {{ $paginator := .Paginate $pages.ByDate.Reverse 7 }}
 
+{{ template "_internal/pagination.html" . }}
+
 {{ range $paginator.Pages }}
   <div class="listmeme">
   <h4>

@@ -1,35 +1,21 @@
 {{ define "main" }}
 <content>
-  <h3>{{ .Title }}</h3>
-  <ul class="blog-posts">
+  <h3>
+    {{ .Title }}
+  </h3>
+    {{ .Content }}
+
     {{ $pages := where site.RegularPages "Type" "museums" }}
-    {{ $paginator := .Paginate $pages.ByTitle 7 }}
-    {{ range .Pages }}
-    <li>
-      <span>
-        <i>
-          <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
-            {{ .Date | time.Format ":date_long" }}
-          </time>
-        </i>
-      </span>
-      <a href="{{ .Permalink }}">{{ .Title }}</a>
-    </li>
+    {{ $paginator := .Paginate $pages.ByDate 21 }}
+    {{ range $paginator.Pages.Reverse }}
+    <h4>
+      <time datetime='{{ .Date.Format "2006-01-02" }}' pubdate>
+        {{ .Date | time.Format ":date_long" }}
+      </time> - {{ .Title }}
+    </h4>
+    {{ .Content }}
     {{ else }}
-    <li>
-      Keine Einträge bis jetzt.
-    </li>
-    {{ end }}
-  </ul>
-  {{ if .Data.Singular }}
-  {{else}}
-    <small>
-      <div>
-        {{ range .Site.Taxonomies.tags }}
-        <a href="{{ .Page.Permalink }}">#{{ .Page.Title }}</a>&nbsp;
-        {{ end }}
-      </div>
-    </small>
+    Keine Museumsbesuche bis jetzt.
     {{ end }}
 </content>
 {{ end }}
